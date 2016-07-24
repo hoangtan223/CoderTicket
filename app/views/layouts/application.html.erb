@@ -18,8 +18,10 @@
         <a class="nav-link" href="#">Sign Up</a>
       </li>
     </ul>
-  </nav>  
-
+  </nav>
+  <% if flash.any? %>
+    <%= flash_messages %>
+  <% end %>
 <%= yield %>
 
 </body>

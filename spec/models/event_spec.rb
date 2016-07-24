@@ -56,4 +56,16 @@ RSpec.describe Event, type: :model do
       expect(Event.search_by_name("việt nam").count).to eq 1
     end
   end
+
+  describe ".is_out_of_date?" do
+    before(:each) do
+      @event = Event.new(starts_at: 1.days.ago)
+    end
+
+    it "should return true if start date of event is in the past" do
+      puts "===> a: #{(@event.starts_at < Time.now).inspect}"
+      expect(@event.is_out_of_date?).to eq true
+    end
+
+  end
 end

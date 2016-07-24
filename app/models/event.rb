@@ -14,6 +14,10 @@ class Event < ActiveRecord::Base
     venue ? venue.name : nil
   end
 
+  def is_out_of_date?
+    starts_at < Time.now
+  end
+
   def self.search_by_name(name)
       where("lower(name) LIKE ?", "%#{name.downcase}%")
   end
