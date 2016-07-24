@@ -1,4 +1,13 @@
 FactoryGirl.define do
+  factory :order_detail do
+    order_id 1
+    ticket_type_id 1
+    quantity 1
+  end
+  factory :order do
+    event_id 1
+    total_price "9.99"
+  end
 
   factory :event do
     #venue
