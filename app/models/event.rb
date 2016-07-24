@@ -13,4 +13,8 @@ class Event < ActiveRecord::Base
   def venue_name
     venue ? venue.name : nil
   end
+
+  def self.search_by_name(name)
+      where("lower(name) LIKE ?", "%#{name.downcase}%")
+  end
 end
