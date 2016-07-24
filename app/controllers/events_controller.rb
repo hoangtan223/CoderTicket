@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all    
+    puts "===> a: #{(params[:search]).inspect}"
+    @events = Event.upcoming_events
   end
 
   def show
