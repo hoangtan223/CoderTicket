@@ -2,9 +2,9 @@
 
 **Name of your app** is a Ruby on Rails blog application that allows users to create and buy tickets to cool events. 
 
-Submitted by: **Your Name Here**
+Submitted by: *Tan Bui**
 
-Time spent: **X** hours
+Time spent: **8** hours
 
 URL: **Insert your Heroku URL here**
 
@@ -26,10 +26,10 @@ The following **required** functionality is complete:
 #### Tickets
 
 * [x] Each event can have multiple types of tickets, each with a different `price` and `max_quantity`. 
-* [ ] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
-* [ ] Users cannot buy more tickets than the quantity available.
-* [ ] Users can only buy up to 10 of a ticket type at a time.
-* [ ] Users cannot buy tickets to events that occur in the past. 
+* [x] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
+* [x] Users cannot buy more tickets than the quantity available.
+* [x] Users can only buy up to 10 of a ticket type at a time.
+* [x] Users cannot buy tickets to events that occur in the past. 
 
 #### Users
 

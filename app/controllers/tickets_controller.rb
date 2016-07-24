@@ -7,7 +7,8 @@ class TicketsController < ApplicationController
     @event = Event.find(params[:event_id])
     if @event.is_out_of_date?
       flash[:error] = "Booking closed! The event is started"
-      render 'new'
+      #render 'new'
+      redirect_to new_event_ticket_path
       return
     end
     
@@ -19,7 +20,7 @@ class TicketsController < ApplicationController
       order_detail = OrderDetail.new(ticket_type_id: ticket_type_id, quantity: quantity)
       unless ticket_type.enough_quantity? order_detail.quantity
         flash[:error] = "There's only #{ticket_type.remaining_tickets} tickets left for #{ticket_type.name}"
-        render 'new'
+        redirect_to new_event_ticket_path
         return
       end
       @order.order_details << order_detail
@@ -29,7 +30,7 @@ class TicketsController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = @order.errors.full_messages.to_sentence
-      render 'new'
+      redirect_to new_event_ticket_path
     end
   end
 end
