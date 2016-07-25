@@ -133,8 +133,8 @@ gap = Venue.create({
 
 e = Event.create({
   name: 'Merry Christmas Never Alone',
-  starts_at: DateTime.parse('Thu, 24 Dec 2016, 8:00 PM+0700'),
-  ends_at: DateTime.parse('Thu, 24 Dec 2016, 11:00 PM+0700'),
+  starts_at: DateTime.parse('Thu, 24 Dec 2015, 8:00 PM+0700'),
+  ends_at: DateTime.parse('Thu, 24 Dec 2015, 11:00 PM+0700'),
   venue: gap,
   category: Category.find_by(name: 'Entertainment'),
   hero_image_url:'https://az810747.vo.msecnd.net/eventcover/2015/12/12/78534E.jpg?w=1040&maxheight=400&mode=crop&anchor=topcenter',
