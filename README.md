@@ -4,9 +4,9 @@
 
 Submitted by: *Tan Bui**
 
-Time spent: **8** hours
+Time spent: **10** hours
 
-URL: **Insert your Heroku URL here**
+URL: **https://desolate-oasis-80351.herokuapp.com**
 
 SimpleCov Test Coverage: **Insert percentage or link to report here**
 
