@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use pg as the database for Active Record
@@ -24,10 +23,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+ gem 'bcrypt', '~> 3.1.7'
 
-gem 'bootstrap', '~> 4.0.0.alpha1'
-#gem 'rails-assets-tether', '>= 1.1.0'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'simple_form'
 gem 'quiet_assets'
 gem 'better_errors', group: :development
@@ -45,8 +43,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
   gem 'guard-rspec', require: false
-  gem "factory_girl_rails", "~> 4.0"
-  gem 'database_cleaner'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :development do
@@ -56,4 +53,4 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
+#gem 'rails-assets-tether', '~> 1.1', '>= 1.1.1'

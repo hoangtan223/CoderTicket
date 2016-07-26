@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :user do
+    name "MyString"
+    email "MyString"
+    password_digest "MyString"
+  end
   factory :order_detail do
     order_id 1
     ticket_type_id 1
