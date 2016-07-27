@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  def index
+    @events = current_user.events
+  end
+
   def new
     @user = User.new
   end
