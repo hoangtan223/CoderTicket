@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @events = current_user.events
+    @events = current_user.created_events
   end
 
   def new
