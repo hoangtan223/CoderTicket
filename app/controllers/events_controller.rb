@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new event_params
-
+    puts "===> a: #{(@event.is_published).inspect}"
     if @event.save
       flash[:success] = "Event created!"
       redirect_to root_path
@@ -34,6 +34,6 @@ class EventsController < ApplicationController
   private
   def event_params
     params.require(:event).permit(:name, :starts_at, :ends_at, :category_id, :venue_id,
-                                  :hero_image_url, :extended_html_description)
+                                  :hero_image_url, :extended_html_description, :is_published)
   end
 end

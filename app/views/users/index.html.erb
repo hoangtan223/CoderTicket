@@ -12,7 +12,21 @@
       <th>Your events</th>
       <th>Starts At</th>
       <th>Status</th>
-      <% %>
+      <% current_user.created_events.each do |event| %>
+          <tr>
+            <td><%= event.name %></td>
+            <td><%= event.starts_at %></td>
+            <td><% if  event.is_published %>
+                  Published
+                  <% else %>
+              <%= link_to "Publish now", publish_event_path(event.id), class: "btn btn-secondary" %>
+              <% end %>
+                  </td>
+          </tr>
+      <% end %>
     </table>
   </div>
+</div>
+<div class="row">
+  <%= link_to "Create new event", new_user_event_path(current_user.id), class: "btn btn-primary col-md-4 col-md-offset-4"%>
 </div>

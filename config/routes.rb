@@ -2,13 +2,17 @@ Rails.application.routes.draw do
 
   get 'sessions/create'
 
-  resources :users
+  resources :users do
+    resources :events
+  end
   resources :events do
     resources :tickets
   end
   resources :sessions, only: [:create, :destroy]
 
   get 'login' => 'sessions#new'
+
+  
 
   root 'events#index'
 
