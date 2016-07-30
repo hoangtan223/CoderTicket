@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
     if params[:search]
-      @events = Event.search_by_name(params[:search])
+      @events = Event.published.search_by_name(params[:search])
     else
       @events = Event.upcoming_events
     end
