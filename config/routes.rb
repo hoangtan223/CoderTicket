@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'login' => 'sessions#new'
 
-  
+  put 'publish_event' => 'events#publish_event'
 
   root 'events#index'
 

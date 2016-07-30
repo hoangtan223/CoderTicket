@@ -19,7 +19,10 @@
             <td><% if  event.is_published %>
                   Published
                   <% else %>
-              <%= link_to "Publish now", publish_event_path(event.id), class: "btn btn-secondary" %>
+                  <%= form_tag 'publish_event', method: :put %>
+                    <%= hidden_field_tag 'id', event.id %>
+                  <%= submit_tag "Publish Now", class: 'btn btn-secondary' %>
+
               <% end %>
                   </td>
           </tr>

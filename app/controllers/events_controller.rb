@@ -19,7 +19,6 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new event_params
-    puts "===> a: #{(@event.is_published).inspect}"
     if @event.save
       flash[:success] = "Event created!"
       redirect_to root_path
@@ -29,6 +28,17 @@ class EventsController < ApplicationController
       @categories = Category.all
       render 'new'
     end
+  end
+
+  def publish_event
+    @event = Event.find params[:id]
+    @event.is_published = true
+    if @event.save
+      flash[:success] = "Publish successful!"
+    else
+      flash[:error] = @event.errors.full_messages.to_sentence
+    end
+    redirect_to users_path
   end
 
   private
