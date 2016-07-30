@@ -8,21 +8,26 @@
       <h1> Hot Events </h1>
       <div class="ticket-list">
         <% if @event.ticket_types.any? %>
-        <% @event.ticket_types.each do |ticket_type| %>
-          <div class="row">
-            <div class="col-md-6">
-              <%= ticket_type.name %>
-            </div>
+            <% @event.ticket_types.each do |ticket_type| %>
+                <div class="row">
+                  <div class="col-md-6">
+                    <%= ticket_type.name %>
+                  </div>
 
-            <div class="col-md-6 price text-right">
-              <%= number_to_currency(ticket_type.price, unit: 'VND', precision: 0) %>
-            </div>
-          </div>
-          <div class="clearfix"></div>
+                  <div class="col-md-6 price text-right">
+                    <%= number_to_currency(ticket_type.price, unit: 'VND', precision: 0) %>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+            <% end %>
         <% end %>
+        <% if is_creator_of? @event %>
+            <%= link_to new_event_ticket_path(@event) do %>
+                <button class='btn btn-lg btn-block btn-success'>Create new Type</button>
+            <% end %>
         <% end %>
         <%= link_to new_event_ticket_path(@event) do %>
-          <button class='btn btn-lg btn-block btn-danger'> BOOK NOW </button>
+            <button class='btn btn-lg btn-block btn-danger'> BOOK NOW </button>
         <% end %>
       </div>
     </div>
@@ -33,19 +38,19 @@
         <div class="pull-left">
           <%= fa_icon 'clock-o' %>
         </div>
-        <div class="time-details"> 
-          <%= @event.starts_at.strftime('%A, %d %b %Y %l:%M %p') %> 
+        <div class="time-details">
+          <%= @event.starts_at.strftime('%A, %d %b %Y %l:%M %p') %>
         </div>
 
-        
+
 
         <div class="pull-left">
           <%= fa_icon 'map-marker' %>
         </div>
         <div class="venue-details">
-         <%= @event.venue.name %>
-         <br/>
-         <%= @event.venue.full_address %>
+          <%= @event.venue.name %>
+          <br/>
+          <%= @event.venue.full_address %>
         </div>
 
         <div class="img-spacer">
@@ -55,7 +60,7 @@
           <%= @event.extended_html_description.html_safe %>
         </div>
 
-      </div>  
+      </div>
     </div>
   </div>
 </div>

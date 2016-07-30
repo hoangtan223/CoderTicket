@@ -14,7 +14,7 @@
       <th>Status</th>
       <% current_user.created_events.each do |event| %>
           <tr>
-            <td><%= event.name %></td>
+            <td><%= link_to event.name, event_path(event)%></td>
             <td><%= event.starts_at %></td>
             <td><% if  event.is_published %>
                   Published
