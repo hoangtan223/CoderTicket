@@ -22,7 +22,7 @@
             <% end %>
         <% end %>
         <% if is_creator_of? @event %>
-            <%= link_to new_event_ticket_path(@event) do %>
+            <%= link_to new_event_ticket_type_path(@event) do %>
                 <button class='btn btn-lg btn-block btn-success'>Create new Type</button>
             <% end %>
         <% end %>

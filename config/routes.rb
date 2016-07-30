@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'ticket_types/new'
+
   get 'sessions/create'
 
   resources :users do
@@ -7,8 +9,11 @@ Rails.application.routes.draw do
   end
   resources :events do
     resources :tickets
+    resources :ticket_types
   end
   resources :sessions, only: [:create, :destroy]
+
+  resources :ticket_types
 
   get 'login' => 'sessions#new'
 
